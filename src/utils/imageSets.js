@@ -13,6 +13,17 @@ const IMAGE_SETS = {
       require("../../assets/sets/thirsty_animals/image_06.png"),
     ],
   },
+  captain_nufard: {
+    name: "Captain Nufard",
+    images: [
+      require("../../assets/sets/captain_nufard/image_01.png"),
+      require("../../assets/sets/captain_nufard/image_02.png"),
+      require("../../assets/sets/captain_nufard/image_03.png"),
+      require("../../assets/sets/captain_nufard/image_04.png"),
+      require("../../assets/sets/captain_nufard/image_05.png"),
+      require("../../assets/sets/captain_nufard/image_06.png"),
+    ],
+  },
   thirsty_sloth: {
     name: "Thirsty Sloth",
     images: [
