@@ -13,15 +13,15 @@ const IMAGE_SETS = {
       require("../../assets/sets/thirsty_animals/image_06.png"),
     ],
   },
-  test_animals: {
-    name: "Test Animals",
+  thirsty_sloth: {
+    name: "Thirsty Sloth",
     images: [
-      require("../../assets/sets/test_animals/image_01.png"),
-      require("../../assets/sets/test_animals/image_02.png"),
-      require("../../assets/sets/test_animals/image_03.png"),
-      require("../../assets/sets/test_animals/image_04.png"),
-      require("../../assets/sets/test_animals/image_05.png"),
-      require("../../assets/sets/test_animals/image_06.png"),
+      require("../../assets/sets/thirsty_sloth/image_01.png"),
+      require("../../assets/sets/thirsty_sloth/image_02.png"),
+      require("../../assets/sets/thirsty_sloth/image_03.png"),
+      require("../../assets/sets/thirsty_sloth/image_04.png"),
+      require("../../assets/sets/thirsty_sloth/image_05.png"),
+      require("../../assets/sets/thirsty_sloth/image_06.png"),
     ],
   },
 };
