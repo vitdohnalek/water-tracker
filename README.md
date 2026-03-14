@@ -44,7 +44,7 @@ npm install
 ### 2. Run locally
 
 ```bash
-npx expo start              # Scan QR with Expo Go on your phone
+npx expo start --tunnel     # Scan QR with Expo Go on your phone
 npx expo start --web        # Browser testing
 ```
 

@@ -66,3 +66,53 @@ export const getMonthTotals = async (year, month) => {
 
   return totals;
 };
+
+// Settings storage
+const SETTINGS_KEY = "settings";
+
+export const getSettings = async () => {
+  try {
+    const data = await AsyncStorage.getItem(SETTINGS_KEY);
+    return data ? JSON.parse(data) : {};
+  } catch (e) {
+    console.error("Failed to load settings:", e);
+    return {};
+  }
+};
+
+export const saveSetting = async (key, value) => {
+  try {
+    const settings = await getSettings();
+    settings[key] = value;
+    await AsyncStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  } catch (e) {
+    console.error("Failed to save setting:", e);
+  }
+};
+
+// Get totals for a range of dates: [{ date, label, total }, ...]
+export const getRangeTotals = async (startDate, days) => {
+  const keys = [];
+  const dates = [];
+  for (let i = 0; i < days; i++) {
+    const d = new Date(startDate);
+    d.setDate(d.getDate() + i);
+    keys.push(getKey(d));
+    dates.push(d);
+  }
+
+  const results = [];
+  try {
+    const pairs = await AsyncStorage.multiGet(keys);
+    for (let i = 0; i < pairs.length; i++) {
+      const [, value] = pairs[i];
+      const entries = value ? JSON.parse(value) : [];
+      const total = entries.reduce((sum, val) => sum + val, 0);
+      results.push({ date: dates[i], total });
+    }
+  } catch (e) {
+    console.error("Failed to load range totals:", e);
+  }
+
+  return results;
+};
